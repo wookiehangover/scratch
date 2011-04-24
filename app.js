@@ -64,7 +64,7 @@ app.get('/', function(req, res){
 
   res.render('index', {
     title: title + ' ' + db.path,
-    files: files,
+    files: files.sort(),
     path: ""
   });
 });
@@ -78,7 +78,6 @@ app.get('/tree/*', function(req, res){
       name = req.params[0],
 
       type;
-      
 
   if( /\.(?:avi|mkv)$/.test( name ) ){
     type = 'divx';
@@ -95,7 +94,9 @@ app.get('/tree/*', function(req, res){
   if( files.length ) {
     return res.render('index', {
       title: title + ' ' + db.path,
-      files: files.sort(),
+      files: files.sort(function(a,b){
+        return ( a.name < b.name ) ? -1: 1;
+      }),
       path: req.params[0] + "/"
     });
   }
