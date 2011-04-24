@@ -1,0 +1,23 @@
+!!! 5
+/if lt IE 7
+  html.no-js.ie6
+/if IE 7
+  html.no-js.ie7
+/if IE 8
+  html.no-js.ie8
+/if(gte IE 9)|!(IE)
+  html.no-js
+head
+  title!= title
+  link(rel='stylesheet', href='/stylesheets/style.css')
+  meta(charset='utf8')
+  script(src='/js/libs/modernizr-1.7.min.js')
+body
+  #container
+    header
+      h1= title
+      a(href='#',id="lights") De-Luminate
+    #main(role='main')!= body
+    footer
+  script(src='/js/ender.js')
+  script(src='/js/script.js')

@@ -1,0 +1,26 @@
+h2= name
+- if ( type == "divx" )
+  object( id="player",
+          classid="clsid:67DABFBF-D0AB-41fa-9C46-CC0F21721616",
+          codebase="http://go.divx.com/plugin/DivXBrowserPlugin.cab")
+
+    param(  name = "src",
+            value = path )
+
+    embed(  type = contentType,
+            src = path,
+            width = 800, height = '450',
+            autoPlay = "false",
+            pluginspage = "http://go.divx.com/plugin/download/" )
+- else if ( type == "video")
+  video( controls )
+    source( src = path, type = contentType )
+
+- else if ( type == "audio" )
+  audio(  controls,
+          autobuffer,
+          autoplay = 'false' )
+    source( src = path )
+
+a(href=path, class="stream")= name
+
