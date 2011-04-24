@@ -6,3 +6,15 @@ currently, it will _attempt_ to stream files directly in your browser and offer 
 
 ## TODO:
 - figure out WTF is up with the DIVX player not wanting to play anything
+
+## Usage:
+
+symlink some media directories into public/files:
+
+    ln -s /path/to/files movies
+
+and then start the server
+
+    node app.js
+
+and enjoy :D
