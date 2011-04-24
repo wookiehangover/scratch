@@ -11,7 +11,7 @@
 
 # OS or Editor folders
 .DS_Store
-.AppleDouble/**/*
+.AppleDouble
 .cache
 .project
 .settings
